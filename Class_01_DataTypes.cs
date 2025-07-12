@@ -13,12 +13,13 @@ class DataTypes
         Console.WriteLine("Height is: " + height);
         Console.WriteLine("Initial: " + initial);
         Console.WriteLine("Name: " + name);
-        Console.WriteLine("Is Student: " + isStudent);
+        Console.WriteLine("Student: " + isStudent);
 
         //input user from userName and print userName
         Console.WriteLine("Enter your name:");
         // string userNameInput = Console.ReadLine();
         // string userName = userNameInput ?? string.Empty; 
         // Console.WriteLine("Hello, " + userName + "!");
+
     }
 }
