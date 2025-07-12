@@ -85,7 +85,7 @@ class StringFormatting
 
         // string.IsNullOrEmpty() ek built-in static method hai jo check karta hai:
         // Kya string null hai ya empty ("") hai? null or empty pr true return karta hai.
-        
+
         string name11 = null;
         string name22 = "";
         string name33 = "Daniyal";
@@ -93,7 +93,7 @@ class StringFormatting
         Console.WriteLine(string.IsNullOrEmpty(name11));  // Output: True
         Console.WriteLine(string.IsNullOrEmpty(name22));  // Output: True
         Console.WriteLine(string.IsNullOrEmpty(name33));  // Output: False
-        
+
         Console.WriteLine("Enter any words:");
         string EnterAnyWords = Console.ReadLine();
         if (string.IsNullOrEmpty(EnterAnyWords))
@@ -107,6 +107,6 @@ class StringFormatting
 
         // // 4. Date and Time Formatting
         DateTime now = DateTime.Now;
-        Console.WriteLine("Current Date: {0:dd MMM, yyyy}", now);      
+        Console.WriteLine("Current Date: {0:dd MMM, yyyy}", now);
     }
 }
