@@ -19,7 +19,12 @@ class Program
         // Formating.Show_Formatting();
         // TryPraseMethod.Show_TryParse();
         // StringFormatting.ShowStringFormatting();
-        LearnArray.ShowArray();
+        // LearnArray.ShowArray();
+        // ArrayPractice.show_array_practice();
+        // LearnListPractice.Show_list();
+        // Learn_Dictionary.Show_Dict();
+        // Dictionary_practice.show_dict_practice();
+        LearnFunction.show_function();
     }
 }
 
