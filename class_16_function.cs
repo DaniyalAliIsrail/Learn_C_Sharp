@@ -48,12 +48,12 @@ class LearnFunction
         Console.WriteLine("Index: " + index);
 
         //ref parameter 
-        
+
         int num1 = 10;
         changeNumber(ref num1);
         Console.WriteLine(num1);
 
-        Console.WriteLine("Enter a old name");   
+        Console.WriteLine("Enter a old name");
         string oldName = Console.ReadLine();// daniyal
         Console.WriteLine("Enter a new name");
         string newName = Console.ReadLine(); //huzaifa
@@ -144,8 +144,5 @@ class LearnFunction
     {
         name = newName;
     }
-
-
-
 
 }
