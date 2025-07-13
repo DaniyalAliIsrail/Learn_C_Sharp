@@ -14,7 +14,6 @@ class DataTypes
         Console.WriteLine("Initial: " + initial);
         Console.WriteLine("Name: " + name);
         Console.WriteLine("Student: " + isStudent);
-
         //input user from userName and print userName
         Console.WriteLine("Enter your name:");
         // string userNameInput = Console.ReadLine();
