@@ -4,97 +4,110 @@ class LearnArray
 {
     public static void ShowArray()
     {
+        Console.WriteLine("=== ARRAY BASICS & CREATION ===\n");
+
+        // 1. Basic Array Creation
         int[] num = new int[3];
         num[0] = 10;
         num[1] = 20;
         num[2] = 30;
-        Console.WriteLine($"Array elements:{num[0]}, {num[1]}, {num[2]}");
+
+        Console.WriteLine($"Array elements: {num[0]}, {num[1]}, {num[2]}");
         Console.WriteLine("Length of array: " + num.Length);
         Console.WriteLine("Array type: " + num.GetType());
-        Console.WriteLine("Array rank: " + num.Rank);//rank define the dimenion of the array
+        Console.WriteLine("Array rank (dimensions): " + num.Rank);
 
-        //loop through the array using for loop and foreach loop
-        // for (int i = 0; i < num.Length; i++)
-        // {
-        //     Console.WriteLine($"Element at index {i}: {num[i]}");
-        // }
-
+        // 2. Loop through array using foreach
+        Console.WriteLine("\nLoop using foreach:");
         foreach (int item in num)
         {
-            Console.WriteLine($"Element in foreach loop: {item}");
+            Console.WriteLine("Element: " + item);
         }
-        //sum of numbers in an array
+
+        // 3. Sum of numbers using user input
+        Console.WriteLine("\nEnter 3 numbers to calculate sum:");
         int[] numarr = new int[3];
         int sum = 0;
         for (int i = 0; i < numarr.Length; i++)
         {
-            Console.WriteLine($"Enter a Number");
-            int usernumber = Convert.ToInt32(Console.ReadLine());
-            sum += usernumber;
+            Console.Write("Enter number " + (i + 1) + ": ");
+            numarr[i] = Convert.ToInt32(Console.ReadLine());
+            sum += numarr[i];
         }
         Console.WriteLine($"Sum of the numbers: {sum}");
-        Console.WriteLine(sum == 90 ? "valid" : "invalid");
+        Console.WriteLine(sum == 90 ? "Valid" : "Invalid");
 
-        // Array.Clear(numbers1, 0, numbers1.Length);
-        // Array.Clear() is a built-in method in C# used to remove (reset) all   the elements of an array by setting them to their default values.
-
-        // Array.Clear() array ko delete nahi karta, sirf us ke elements ko default value (like 0 ya null) par set karta hai.
-        //  Array ka size wahi rehta hai.
-
+        // 4. Array.Clear() demonstration
+        Console.WriteLine("\nArray.Clear() Demo:");
         int[] values = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
         Array.Clear(values, 5, 3);
+        Console.WriteLine("Values after clearing from index 5 (3 elements):");
         foreach (var i in values)
         {
             Console.WriteLine(i);
         }
 
-        //Example
         string[] names = new string[] { "Ali", "Ahmed", "Sara", "Zain" };
         Array.Clear(names, 1, 2);
-
-        // Output: Ali, null, null, Zain
+        Console.WriteLine("\nNames after clearing index 1-2:");
         foreach (string name in names)
         {
-            Console.WriteLine(name);
+            Console.WriteLine(name ?? "null");
         }
 
-        //IndexOf()
-        //Array.IndexOf() method C# mein kisi array mein kisi specific element ki index position ko dhoondne ke liye istemal hota hai.
-        // Ye method array mein pehli dafa milne wale element ki index position return karta
-
-        Console.WriteLine("Using for loop to find index:");
-
+        // 5. Array.IndexOf()
         int[] numbers1 = new int[] { 10, 20, 30, 40, 50 };
-        Console.WriteLine("Enter a number to find its index using builtin method");
+        Console.Write("\nEnter a number to find its index: ");
         int search = Convert.ToInt32(Console.ReadLine());
         int position = Array.IndexOf(numbers1, search);
+
         if (position != -1)
-        {
             Console.WriteLine($"Number {search} found at index: {position}");
-        }
         else
-        {
-            Console.WriteLine($"Number {search} not found in the array.");
-        }
-        //same example using for loop not use any built-in method
-        Console.WriteLine("Using for loop to find index:");
-        int positionArr = -1;
-        for (int i = 0; i <= numbers1.Length - 1; i++)
+            Console.WriteLine($"Number {search} not found in array.");
+
+        // 6. Index search using custom for loop
+        Console.WriteLine("\nCustom for loop index search:");
+        int foundIndex = -1;
+        for (int i = 0; i < numbers1.Length; i++)
         {
             if (numbers1[i] == search)
             {
-                positionArr = i;
-                Console.WriteLine($"Number {search} found at index: {positionArr}");
-                break; // Exit the loop once the number is found
+                foundIndex = i;
+                Console.WriteLine($"Found at index: {foundIndex}");
+                break;
             }
-            else
-            {
-                positionArr = -1;
-                Console.WriteLine($"Number {search} not found in the array.{positionArr}");
-            }
-
+        }
+        if (foundIndex == -1)
+        {
+            Console.WriteLine("Not found");
         }
 
-    }
+        // 7. Sorting arrays
+        Console.WriteLine("\nArray Sorting:");
+        string[] fruits = { "Banana", "Apple", "Mango", "Orange" };
+        Console.WriteLine("Before sort: " + string.Join(", ", fruits));
+        Array.Sort(fruits);
+        Console.WriteLine("After sort (A-Z): " + string.Join(", ", fruits));
 
+        int[] unsortedNums = { 42, 5, 18, 23, 7 };
+        Array.Sort(unsortedNums);
+        Console.WriteLine("Sorted numbers: " + string.Join(", ", unsortedNums));
+
+        // 8. Reversing arrays
+        Console.WriteLine("\nArray Reversing:");
+        Array.Reverse(fruits);
+        Console.WriteLine("Reversed fruits: " + string.Join(", ", fruits));
+        Array.Reverse(unsortedNums);
+        Console.WriteLine("Reversed numbers: " + string.Join(", ", unsortedNums));
+
+        // 9. Array initialization techniques
+        Console.WriteLine("\nArray Initialization Techniques:");
+        int[] arr1 = { 1, 2, 3 };
+        int[] arr2 = new int[] { 4, 5, 6 };
+        var arr3 = new[] { 7, 8, 9 };
+        Console.WriteLine("arr1: " + string.Join(", ", arr1));
+        Console.WriteLine("arr2: " + string.Join(", ", arr2));
+        Console.WriteLine("arr3 (with var): " + string.Join(", ", arr3));
+    }
 }
