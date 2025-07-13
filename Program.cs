@@ -24,7 +24,9 @@ class Program
         // LearnListPractice.Show_list();
         // Learn_Dictionary.Show_Dict();
         // Dictionary_practice.show_dict_practice();
-        LearnFunction.show_function();
+        // LearnFunction.show_function();
+        // Function_Practice.show_functionPractice();
+        // Exception_Handling.show_exception_handling();
     }
 }
 
